@@ -29,7 +29,7 @@ android {
 
     defaultConfig {
         // The application ID is the unique identifier for the app on the Play Store and other app stores.
-        applicationId = "ink.trmnl.android"
+        applicationId = "ai.openclaw.axepaper"
         
         // Minimum SDK is Android 9.0 (Pie) with 94% Android devices coverage
         // Can't be lower than 28, See https://github.com/usetrmnl/trmnl-android/pull/56
@@ -41,8 +41,8 @@ android {
         // ⚠️ App versioning update is required in multiple places.
         // 👇🏽 Use the following workflow to update versions everywhere automatically ♻️
         // https://github.com/usetrmnl/trmnl-android/actions/workflows/version-management.yml
-        versionCode = 36
-        versionName = "2.11.0"
+        versionCode = 1
+        versionName = "0.1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

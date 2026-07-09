@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "TRMNL"
+rootProject.name = "AXE Paper"
 include(":app")

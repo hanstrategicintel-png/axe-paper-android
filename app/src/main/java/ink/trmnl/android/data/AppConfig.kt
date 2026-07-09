@@ -33,20 +33,20 @@ object AppConfig {
     const val TRMNL_DOMAIN = "trmnl.com"
 
     /**
-     * Base URL for the TRMNL API server.
-     * Ref:
-     * - https://github.com/usetrmnl/trmnl-android/issues/171
-     * - https://github.com/usetrmnl/trmnl-android/issues/240
+     * Default AXE Paper API server.
+     *
+     * This points at John's Otium instance over Tailscale. The app still keeps custom server
+     * URL support from the MIT TRMNL Android base, so this can be changed on-device.
      */
-    const val TRMNL_API_SERVER_BASE_URL = "https://$TRMNL_DOMAIN/"
+    const val TRMNL_API_SERVER_BASE_URL = "https://jps-macbook-pro.tail362d50.ts.net/otium/"
 
     /**
-     * URL for the TRMNL Android app on GitHub.
+     * URL for the AXE Paper source/workspace note.
      */
     const val TRMNL_ANDROID_APP_GITHUB_URL = "https://github.com/usetrmnl/trmnl-android"
 
     /**
-     * URL for the TRMNL main website.
+     * URL for AXE Paper/Otium on John's tailnet.
      */
-    const val TRMNL_SITE_URL = "https://trmnl.com/"
+    const val TRMNL_SITE_URL = "https://jps-macbook-pro.tail362d50.ts.net/otium/api/axe-paper/view"
 }

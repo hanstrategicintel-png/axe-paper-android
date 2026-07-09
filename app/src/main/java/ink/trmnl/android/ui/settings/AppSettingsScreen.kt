@@ -271,9 +271,9 @@ class AppSettingsPresenter(
 ) : Presenter<AppSettingsScreen.State> {
     @Composable
     override fun present(): AppSettingsScreen.State {
-        var deviceType by remember { mutableStateOf(TrmnlDeviceType.TRMNL) }
-        var serverBaseUrl by remember { mutableStateOf("") }
-        var accessToken by remember { mutableStateOf("") }
+        var deviceType by remember { mutableStateOf(TrmnlDeviceType.BYOS) }
+        var serverBaseUrl by remember { mutableStateOf(TRMNL_API_SERVER_BASE_URL) }
+        var accessToken by remember { mutableStateOf("axe-paper") }
         var deviceMacId by remember { mutableStateOf("") }
         var isByodMasterDevice by remember { mutableStateOf(true) }
         var isLoading by remember { mutableStateOf(false) }
@@ -373,7 +373,7 @@ class AppSettingsPresenter(
                             if (deviceType == TrmnlDeviceType.BYOS) {
                                 if (!isValidUrl(serverBaseUrl)) {
                                     isLoading = false
-                                    validationResult = InvalidServerUrl("Please enter a valid HTTPS URL (e.g. https://my-terminus.com)")
+                                    validationResult = InvalidServerUrl("Please enter a valid HTTPS URL (e.g. https://jps-macbook-pro.tail362d50.ts.net/otium/)")
                                     return@launch
                                 }
 
@@ -564,16 +564,11 @@ class AppSettingsPresenter(
     }
 
     /**
-     * Returns the server base URL for the [deviceType] (custom or TRMNL server).
+     * Returns the server base URL for the [deviceType]. AXE Paper defaults every mode to
+     * John's private Otium/Tailscale server, while still allowing BYOS overrides.
      */
     private fun String.forDevice(deviceType: TrmnlDeviceType): String =
-        if (deviceType == TrmnlDeviceType.BYOS) {
-            // For BYOS, use the provided custom server URL
-            this
-        } else {
-            // For any other device type, use the default TRMNL API server URL
-            TRMNL_API_SERVER_BASE_URL
-        }
+        if (deviceType == TrmnlDeviceType.BYOS) this else TRMNL_API_SERVER_BASE_URL
 
     @CircuitInject(AppSettingsScreen::class, AppScope::class)
     @AssistedFactory
