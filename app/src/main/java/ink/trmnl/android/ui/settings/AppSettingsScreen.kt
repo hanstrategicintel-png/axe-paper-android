@@ -658,7 +658,7 @@ fun AppSettingsContent(
         ) {
             Icon(
                 painter = painterResource(R.drawable.trmnl_logo_plain),
-                contentDescription = "TRMNL Logo",
+                contentDescription = "AXE Paper Logo",
                 tint = MaterialTheme.colorScheme.onSurface,
                 modifier =
                     Modifier
@@ -1173,7 +1173,7 @@ private fun WorkScheduleStatusCard(
             horizontalAlignment = Alignment.Start,
         ) {
             Text(
-                text = "TRMNL Display Image Refresh Schedule Status",
+                text = "AXE Paper Refresh Schedule Status",
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(bottom = 8.dp),

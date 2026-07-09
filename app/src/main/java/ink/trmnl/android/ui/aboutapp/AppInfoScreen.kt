@@ -168,7 +168,7 @@ fun AppInfoContent(
 
             // App Description
             Text(
-                text = "Display your TRMNL content on your Android device",
+                text = "Display AXE Paper from Otium on this Android e-ink device",
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 textAlign = TextAlign.Center,
@@ -264,7 +264,7 @@ fun AppInfoContent(
                     contentDescription = null,
                     modifier = Modifier.padding(end = 12.dp),
                 )
-                Text("Visit TRMNL", modifier = Modifier.weight(1f))
+                Text("Open AXE Paper", modifier = Modifier.weight(1f))
             }
 
             Spacer(modifier = Modifier.height(32.dp))

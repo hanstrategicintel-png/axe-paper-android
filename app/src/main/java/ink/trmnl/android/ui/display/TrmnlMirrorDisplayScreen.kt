@@ -193,14 +193,14 @@ class TrmnlMirrorDisplayPresenter(
         // Latest image URL is received from WorkManager work requests.
         LaunchedEffect(Unit) {
             trmnlImageUpdateManager.imageUpdateFlow.collect { imageMetadata ->
-                Timber.d("Received new image URL from TRMNL Image Update Manager: $imageMetadata")
+                Timber.d("Received new AXE Paper image URL: $imageMetadata")
                 if (imageMetadata != null && imageMetadata.errorMessage == null) {
                     imageUrl = imageMetadata.url
                     isLoading = false
                     error = null
                     retryInfo = null // Clear retry info on successful load
                 } else {
-                    Timber.w("Failed to get cached image URL from TRMNL Image Update Manager `imageUpdateFlow`")
+                    Timber.w("Failed to get cached AXE Paper image URL from `imageUpdateFlow`")
                     // Keep showing loading state until we have a valid response from the server
                     // Only set error state if we have a non-null imageMetadata with an error
                     if (imageMetadata != null) {
@@ -366,7 +366,7 @@ fun TrmnlMirrorDisplayContent(
             when (result) {
                 is TrmnlMirrorDisplayScreen.SaveImageResult.Success -> {
                     snackbarHostState.showSnackbar(
-                        message = "Image saved to Pictures/TRMNL",
+                        message = "Image saved to Pictures/AXE Paper",
                         duration = SnackbarDuration.Short,
                     )
                 }
@@ -458,7 +458,7 @@ fun TrmnlMirrorDisplayContent(
                     // https://developer.android.com/develop/ui/compose/tooling/previews#localinspectionmode
                     Image(
                         painter = painterResource(R.drawable.trmnl_device_white),
-                        contentDescription = "Terminal Display Preview",
+                        contentDescription = "AXE Paper Display Preview",
                         contentScale = ContentScale.Fit,
                         modifier = Modifier.fillMaxSize(),
                     )
@@ -466,7 +466,7 @@ fun TrmnlMirrorDisplayContent(
                     // In real app, use AsyncImage with network URL
                     AsyncImage(
                         model = CoilRequestUtils.createCachedImageRequest(context, state.imageUrl),
-                        contentDescription = "Terminal Display",
+                        contentDescription = "AXE Paper Display",
                         contentScale = ContentScale.Fit,
                         placeholder = painterResource(R.drawable.trmnl_logo_semi_transparent),
                         error = painterResource(R.drawable.trmnl_logo_semi_transparent),
@@ -511,7 +511,7 @@ fun TrmnlMirrorDisplayContent(
     }
 }
 
-@Preview(name = "TRMNL Display Image Preview")
+@Preview(name = "AXE Paper Display Image Preview")
 @PreviewScreenSizes
 @Composable
 fun PreviewTrmnlMirrorDisplayImageContent() {
@@ -532,7 +532,7 @@ fun PreviewTrmnlMirrorDisplayImageContent() {
     }
 }
 
-@Preview(name = "TRMNL Display With Controls")
+@Preview(name = "AXE Paper Display With Controls")
 @PreviewScreenSizes
 @Composable
 fun PreviewTrmnlMirrorDisplayWithControls() {
@@ -553,7 +553,7 @@ fun PreviewTrmnlMirrorDisplayWithControls() {
     }
 }
 
-@Preview(name = "TRMNL Display Error Content Preview")
+@Preview(name = "AXE Paper Display Error Content Preview")
 @Composable
 fun PreviewTrmnlMirrorDisplayErrorContent() {
     Surface {
@@ -573,7 +573,7 @@ fun PreviewTrmnlMirrorDisplayErrorContent() {
     }
 }
 
-@Preview(name = "TRMNL Display Retrying Preview")
+@Preview(name = "AXE Paper Display Retrying Preview")
 @Composable
 fun PreviewTrmnlMirrorDisplayRetryingContent() {
     Surface {

@@ -112,7 +112,7 @@ internal fun OverlaySettingsView(
                 },
                 text = {
                     Text(
-                        "Configure TRMNL",
+                        "Configure AXE Paper",
                         style = fabTextStyle,
                         fontWeight = FontWeight.Bold,
                     )

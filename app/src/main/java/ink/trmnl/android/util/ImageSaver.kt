@@ -59,7 +59,7 @@ object ImageSaver {
 
                 // Generate a unique filename
                 val timestamp = System.currentTimeMillis()
-                val filename = "TRMNL_$timestamp.png"
+                val filename = "AXE_Paper_$timestamp.png"
 
                 return@withContext saveImageMediaStore(context, bitmap, filename)
             } catch (e: Exception) {
@@ -84,7 +84,7 @@ object ImageSaver {
                 put(MediaStore.MediaColumns.DISPLAY_NAME, filename)
                 put(MediaStore.MediaColumns.MIME_TYPE, "image/png")
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                    put(MediaStore.MediaColumns.RELATIVE_PATH, "${Environment.DIRECTORY_PICTURES}/TRMNL")
+                    put(MediaStore.MediaColumns.RELATIVE_PATH, "${Environment.DIRECTORY_PICTURES}/AXE Paper")
                 }
             }
 

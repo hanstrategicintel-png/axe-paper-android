@@ -43,7 +43,7 @@ object AppConfig {
     /**
      * URL for the AXE Paper source/workspace note.
      */
-    const val TRMNL_ANDROID_APP_GITHUB_URL = "https://github.com/usetrmnl/trmnl-android"
+    const val TRMNL_ANDROID_APP_GITHUB_URL = "https://github.com/hanstrategicintel-png/axe-paper-android"
 
     /**
      * URL for AXE Paper/Otium on John's tailnet.

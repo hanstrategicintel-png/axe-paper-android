@@ -55,7 +55,7 @@ internal fun TrmnlDeviceTypeInfoText() {
     val linkStyle = SpanStyle(color = MaterialTheme.colorScheme.primary, textDecoration = TextDecoration.Underline)
     val annotatedString =
         buildAnnotatedString {
-            append("Mirrors your existing TRMNL content. Your TRMNL device token can be found in settings screen from your ")
+            append("AXE Paper is preconfigured for Otium over Tailscale. Use BYOS mode unless you intentionally connect to another server. ")
 
             withLink(
                 LinkAnnotation.Url(
@@ -185,7 +185,7 @@ internal fun ByosDeviceTypeInfoText() {
     }
 }
 
-@Preview(name = "TRMNL Info Text View Preview", showBackground = true)
+@Preview(name = "AXE Paper Info Text View Preview", showBackground = true)
 @Composable
 private fun PreviewInfoTextView() {
     TrmnlDisplayAppTheme {
