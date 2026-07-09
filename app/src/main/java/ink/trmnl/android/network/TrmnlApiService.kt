@@ -56,7 +56,7 @@ interface TrmnlApiService {
          *
          * @see setupNewDevice
          */
-        internal const val SETUP_API_PATH = "api/setup/"
+        internal const val SETUP_API_PATH = "api/setup"
 
         /**
          * Path for the TRMNL API endpoint that provides the list of available device models.
